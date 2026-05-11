@@ -251,8 +251,7 @@ export default function Index() {
             className="text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed animate-slide-up delay-400"
             style={{ color: "var(--chrome)", fontFamily: "'Rubik', sans-serif" }}
           >
-            Эксклюзивные изделия из стали с аниме-гравировкой ручной работы.
-            Каждый клинок — история, рассказанная металлом.
+            Эксклюзивные картины на металле, HD качества, портреты, фото, постеры.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up delay-500">
