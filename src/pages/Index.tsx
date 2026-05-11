@@ -387,7 +387,7 @@ export default function Index() {
                     className="text-4xl font-black"
                     style={{ fontFamily: "'Russo One', sans-serif", color: "var(--neon-gold)" }}
                   >
-                    48 000 ₽
+                    2 000 ₽
                   </div>
                 </div>
                 <a href="#order">
