@@ -244,7 +244,7 @@ export default function Index() {
               textTransform: "uppercase",
             }}
           >
-            ⚔ Кузница Легенд ⚔
+            Картины на металле
           </div>
 
           <p
