@@ -4,53 +4,56 @@
 
 @layer base {
   :root {
-    --background: 220 15% 6%;
-    --foreground: 45 80% 92%;
+    --background: 270 30% 8%;
+    --foreground: 320 80% 96%;
 
-    --card: 220 15% 9%;
-    --card-foreground: 45 80% 92%;
+    --card: 270 25% 11%;
+    --card-foreground: 320 80% 96%;
 
-    --popover: 220 15% 9%;
-    --popover-foreground: 45 80% 92%;
+    --popover: 270 25% 11%;
+    --popover-foreground: 320 80% 96%;
 
-    --primary: 38 95% 55%;
-    --primary-foreground: 220 15% 6%;
+    --primary: 320 100% 65%;
+    --primary-foreground: 270 30% 8%;
 
-    --secondary: 220 15% 12%;
-    --secondary-foreground: 45 80% 92%;
+    --secondary: 270 25% 15%;
+    --secondary-foreground: 320 80% 96%;
 
-    --muted: 220 15% 12%;
-    --muted-foreground: 220 10% 55%;
+    --muted: 270 25% 15%;
+    --muted-foreground: 270 20% 60%;
 
-    --accent: 185 100% 50%;
-    --accent-foreground: 220 15% 6%;
+    --accent: 190 100% 55%;
+    --accent-foreground: 270 30% 8%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 45 80% 92%;
+    --destructive-foreground: 320 80% 96%;
 
-    --border: 220 15% 18%;
-    --input: 220 15% 14%;
-    --ring: 38 95% 55%;
+    --border: 270 25% 20%;
+    --input: 270 25% 15%;
+    --ring: 320 100% 65%;
 
-    --radius: 0.25rem;
+    --radius: 0.5rem;
 
-    /* Кастомные переменные проекта */
-    --neon-gold: #f5a623;
-    --neon-cyan: #00f5ff;
-    --neon-red: #ff2d55;
-    --chrome: #c8c8d0;
-    --dark-metal: #0d0e14;
-    --mid-metal: #1a1c26;
-    --steel: #8892a4;
+    /* Аниме-палитра */
+    --anime-pink: #ff3cac;
+    --anime-purple: #c044ff;
+    --anime-blue: #00d4ff;
+    --anime-yellow: #ffe94d;
+    --anime-green: #39ff87;
+    --dark-bg: #0f0816;
+    --mid-bg: #1a1030;
+    --card-bg: #201540;
+    --text-bright: #fce8ff;
+    --text-dim: #9b7fc0;
 
-    --sidebar-background: 220 15% 6%;
-    --sidebar-foreground: 45 80% 92%;
-    --sidebar-primary: 38 95% 55%;
-    --sidebar-primary-foreground: 220 15% 6%;
-    --sidebar-accent: 220 15% 12%;
-    --sidebar-accent-foreground: 45 80% 92%;
-    --sidebar-border: 220 15% 18%;
-    --sidebar-ring: 38 95% 55%;
+    --sidebar-background: 270 30% 8%;
+    --sidebar-foreground: 320 80% 96%;
+    --sidebar-primary: 320 100% 65%;
+    --sidebar-primary-foreground: 270 30% 8%;
+    --sidebar-accent: 270 25% 15%;
+    --sidebar-accent-foreground: 320 80% 96%;
+    --sidebar-border: 270 25% 20%;
+    --sidebar-ring: 320 100% 65%;
   }
 }
 
@@ -58,81 +61,78 @@
   * {
     @apply border-border;
   }
-
   html {
     scroll-behavior: smooth;
   }
-
   body {
     @apply bg-background text-foreground;
-    font-family: "Rubik", sans-serif;
-    background-color: var(--dark-metal);
+    font-family: "Rubik", "M PLUS Rounded 1c", sans-serif;
+    background-color: var(--dark-bg);
     overflow-x: hidden;
   }
 }
 
-/* ===== МЕТАЛЛИЧЕСКИЕ ТЕКСТУРЫ ===== */
-.metal-bg {
-  background:
-    linear-gradient(135deg, rgba(200, 200, 208, 0.03) 0%, transparent 50%),
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 2px,
-      rgba(200, 200, 208, 0.015) 2px,
-      rgba(200, 200, 208, 0.015) 4px
-    ),
-    var(--dark-metal);
+/* ===== НЕОНОВЫЕ ТЕКСТЫ ===== */
+.neon-pink {
+  color: var(--anime-pink);
+  text-shadow:
+    0 0 10px rgba(255, 60, 172, 0.8),
+    0 0 30px rgba(255, 60, 172, 0.4);
+}
+.neon-purple {
+  color: var(--anime-purple);
+  text-shadow:
+    0 0 10px rgba(192, 68, 255, 0.8),
+    0 0 30px rgba(192, 68, 255, 0.4);
+}
+.neon-blue {
+  color: var(--anime-blue);
+  text-shadow:
+    0 0 10px rgba(0, 212, 255, 0.8),
+    0 0 30px rgba(0, 212, 255, 0.4);
+}
+.neon-yellow {
+  color: var(--anime-yellow);
+  text-shadow:
+    0 0 10px rgba(255, 233, 77, 0.8),
+    0 0 30px rgba(255, 233, 77, 0.4);
 }
 
-.chrome-gradient {
+/* совместимость со старыми классами */
+.neon-text-gold {
+  color: var(--anime-yellow);
+  text-shadow:
+    0 0 10px rgba(255, 233, 77, 0.8),
+    0 0 30px rgba(255, 233, 77, 0.4);
+}
+.neon-text-cyan {
+  color: var(--anime-blue);
+  text-shadow:
+    0 0 10px rgba(0, 212, 255, 0.8),
+    0 0 30px rgba(0, 212, 255, 0.4);
+}
+.neon-text-red {
+  color: var(--anime-pink);
+  text-shadow:
+    0 0 10px rgba(255, 60, 172, 0.8),
+    0 0 30px rgba(255, 60, 172, 0.4);
+}
+
+/* ===== ГРАДИЕНТНЫЕ ТЕКСТЫ ===== */
+.grad-text-main {
   background: linear-gradient(
     135deg,
-    #2a2d3a 0%,
-    #404558 25%,
-    #c8c8d0 45%,
-    #8892a4 55%,
-    #404558 75%,
-    #1a1c26 100%
+    #ff3cac 0%,
+    #c044ff 40%,
+    #00d4ff 80%,
+    #ffe94d 100%
   );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.neon-border-gold {
-  border: 1px solid var(--neon-gold);
-  box-shadow:
-    0 0 8px rgba(245, 166, 35, 0.4),
-    inset 0 0 8px rgba(245, 166, 35, 0.05);
-}
-
-.neon-border-cyan {
-  border: 1px solid var(--neon-cyan);
-  box-shadow:
-    0 0 8px rgba(0, 245, 255, 0.4),
-    inset 0 0 8px rgba(0, 245, 255, 0.05);
-}
-
-.neon-text-gold {
-  color: var(--neon-gold);
-  text-shadow:
-    0 0 12px rgba(245, 166, 35, 0.7),
-    0 0 24px rgba(245, 166, 35, 0.3);
-}
-
-.neon-text-cyan {
-  color: var(--neon-cyan);
-  text-shadow:
-    0 0 12px rgba(0, 245, 255, 0.7),
-    0 0 24px rgba(0, 245, 255, 0.3);
-}
-
-.neon-text-red {
-  color: var(--neon-red);
-  text-shadow:
-    0 0 12px rgba(255, 45, 85, 0.7),
-    0 0 24px rgba(255, 45, 85, 0.3);
-}
-
-/* ===== ГЛИТЧ ЭФФЕКТ ===== */
+/* ===== ГЛИТЧ ===== */
 @keyframes glitch {
   0% {
     transform: translate(0);
@@ -155,7 +155,6 @@
     clip-path: inset(0 0 100% 0);
   }
 }
-
 @keyframes glitch2 {
   0% {
     transform: translate(0);
@@ -163,12 +162,12 @@
   }
   5% {
     transform: translate(3px, -1px);
-    opacity: 0.7;
+    opacity: 0.6;
     clip-path: inset(20% 0 50% 0);
   }
   10% {
     transform: translate(-3px, 1px);
-    opacity: 0.5;
+    opacity: 0.4;
     clip-path: inset(60% 0 10% 0);
   }
   15% {
@@ -180,30 +179,33 @@
     opacity: 0;
   }
 }
-
 .glitch-container {
   position: relative;
 }
-
 .glitch-container::before {
   content: attr(data-text);
   position: absolute;
   top: 0;
   left: 0;
-  color: var(--neon-cyan);
-  animation: glitch 4s infinite;
+  background: linear-gradient(135deg, #00d4ff, #c044ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: glitch 5s infinite;
 }
-
 .glitch-container::after {
   content: attr(data-text);
   position: absolute;
   top: 0;
   left: 0;
-  color: var(--neon-red);
-  animation: glitch2 4s infinite;
+  background: linear-gradient(135deg, #ff3cac, #ffe94d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: glitch2 5s infinite;
 }
 
-/* ===== СКАНЛАЙН ЭФФЕКТ ===== */
+/* ===== СКАНЛАЙНЫ ===== */
 .scanlines::after {
   content: "";
   position: absolute;
@@ -211,9 +213,9 @@
   background: repeating-linear-gradient(
     0deg,
     transparent,
-    transparent 2px,
-    rgba(0, 0, 0, 0.15) 2px,
-    rgba(0, 0, 0, 0.15) 4px
+    transparent 3px,
+    rgba(255, 60, 172, 0.03) 3px,
+    rgba(255, 60, 172, 0.03) 4px
   );
   pointer-events: none;
   z-index: 10;
@@ -226,22 +228,20 @@
     transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-12px) rotate(1deg);
+    transform: translateY(-14px) rotate(2deg);
   }
 }
-
-@keyframes pulse-glow {
+@keyframes pulse-glow-pink {
   0%,
   100% {
-    box-shadow: 0 0 12px rgba(245, 166, 35, 0.4);
+    box-shadow: 0 0 15px rgba(255, 60, 172, 0.5);
   }
   50% {
     box-shadow:
-      0 0 30px rgba(245, 166, 35, 0.8),
-      0 0 60px rgba(245, 166, 35, 0.3);
+      0 0 40px rgba(255, 60, 172, 0.9),
+      0 0 80px rgba(192, 68, 255, 0.4);
   }
 }
-
 @keyframes slide-up {
   from {
     opacity: 0;
@@ -252,21 +252,6 @@
     transform: translateY(0);
   }
 }
-
-@keyframes spark {
-  0% {
-    opacity: 0;
-    transform: scale(0) translateY(0);
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1) translateY(-30px);
-  }
-}
-
 @keyframes rotate-slow {
   from {
     transform: rotate(0deg);
@@ -275,24 +260,67 @@
     transform: rotate(360deg);
   }
 }
-
 @keyframes flicker {
   0%,
-  95%,
+  94%,
   100% {
     opacity: 1;
   }
-  96% {
-    opacity: 0.7;
+  95% {
+    opacity: 0.6;
   }
   97% {
     opacity: 1;
   }
-  98% {
+  99% {
     opacity: 0.5;
   }
-  99% {
+}
+@keyframes sakura-fall {
+  0% {
+    transform: translateY(-20px) rotate(0deg) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(110vh) rotate(720deg) translateX(80px);
+    opacity: 0;
+  }
+}
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
     opacity: 1;
+    transform: scale(1.4);
+  }
+}
+@keyframes border-dance {
+  0%,
+  100% {
+    border-color: rgba(255, 60, 172, 0.5);
+  }
+  33% {
+    border-color: rgba(192, 68, 255, 0.5);
+  }
+  66% {
+    border-color: rgba(0, 212, 255, 0.5);
   }
 }
 
@@ -300,19 +328,19 @@
   animation: float 6s ease-in-out infinite;
 }
 .animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+  animation: pulse-glow-pink 2.5s ease-in-out infinite;
 }
 .animate-slide-up {
-  animation: slide-up 0.6s ease-out forwards;
+  animation: slide-up 0.7s ease-out forwards;
+  opacity: 0;
 }
 .animate-rotate-slow {
   animation: rotate-slow 20s linear infinite;
 }
 .animate-flicker {
-  animation: flicker 5s linear infinite;
+  animation: flicker 6s linear infinite;
 }
 
-/* ===== ЗАДЕРЖКИ АНИМАЦИЙ ===== */
 .delay-100 {
   animation-delay: 0.1s;
 }
@@ -338,38 +366,54 @@
   animation-delay: 0.8s;
 }
 
+/* ===== ЛЕПЕСТКИ / ЧАСТИЦЫ ===== */
+.bg-particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.particle {
+  position: absolute;
+  top: -20px;
+  animation: sakura-fall linear infinite;
+  border-radius: 50% 0 50% 0;
+}
+
 /* ===== КНОПКИ ===== */
 .btn-forge {
   position: relative;
-  background: linear-gradient(135deg, #f5a623, #d4860f);
-  color: #0d0e14;
-  font-family: "Oswald", sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  background: linear-gradient(135deg, #ff3cac, #c044ff);
+  color: #fff;
+  font-family: "M PLUS Rounded 1c", "Rubik", sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   border: none;
   padding: 14px 32px;
-  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  border-radius: 50px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.25s;
   overflow: hidden;
+  box-shadow: 0 4px 20px rgba(255, 60, 172, 0.45);
 }
-
 .btn-forge::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), transparent);
   opacity: 0;
   transition: opacity 0.2s;
 }
-
 .btn-forge:hover::before {
   opacity: 1;
 }
 .btn-forge:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(245, 166, 35, 0.5);
+  transform: translateY(-3px);
+  box-shadow:
+    0 8px 35px rgba(255, 60, 172, 0.7),
+    0 0 60px rgba(192, 68, 255, 0.35);
 }
 .btn-forge:active {
   transform: translateY(0);
@@ -377,129 +421,113 @@
 
 .btn-steel {
   background: transparent;
-  color: var(--neon-cyan);
-  font-family: "Oswald", sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  color: var(--anime-blue);
+  font-family: "M PLUS Rounded 1c", "Rubik", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  border: 1px solid var(--neon-cyan);
-  padding: 13px 30px;
-  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  border: 2px solid var(--anime-blue);
+  padding: 12px 30px;
+  border-radius: 50px;
   cursor: pointer;
-  transition: all 0.2s;
-  box-shadow: 0 0 8px rgba(0, 245, 255, 0.3);
+  transition: all 0.25s;
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.3);
 }
-
 .btn-steel:hover {
-  background: rgba(0, 245, 255, 0.1);
-  box-shadow: 0 0 20px rgba(0, 245, 255, 0.6);
+  background: rgba(0, 212, 255, 0.1);
+  box-shadow: 0 0 28px rgba(0, 212, 255, 0.7);
+  transform: translateY(-2px);
 }
 
 /* ===== КАРТОЧКИ ===== */
 .card-metal {
-  background: linear-gradient(135deg, var(--mid-metal), rgba(26, 28, 38, 0.8));
-  border: 1px solid rgba(200, 200, 208, 0.1);
+  background: linear-gradient(
+    135deg,
+    rgba(32, 21, 64, 0.95),
+    rgba(20, 12, 40, 0.9)
+  );
+  border: 1px solid rgba(255, 60, 172, 0.2);
+  border-radius: 12px;
   position: relative;
   overflow: hidden;
   transition: all 0.3s;
 }
-
 .card-metal::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 1px;
+  height: 2px;
   background: linear-gradient(
     90deg,
     transparent,
-    var(--neon-gold),
+    var(--anime-pink),
+    var(--anime-purple),
     transparent
   );
   opacity: 0;
   transition: opacity 0.3s;
 }
-
 .card-metal:hover::before {
   opacity: 1;
 }
 .card-metal:hover {
-  border-color: rgba(245, 166, 35, 0.3);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 60, 172, 0.45);
+  transform: translateY(-5px);
+  box-shadow:
+    0 16px 50px rgba(255, 60, 172, 0.2),
+    0 0 30px rgba(192, 68, 255, 0.15);
 }
 
-/* ===== ФОРМА ===== */
-.input-forge {
-  background: rgba(13, 14, 20, 0.8);
-  border: 1px solid rgba(200, 200, 208, 0.15);
-  color: #e8e0d0;
-  font-family: "Rubik", sans-serif;
-  padding: 12px 16px;
-  width: 100%;
-  outline: none;
-  transition:
-    border-color 0.2s,
-    box-shadow 0.2s;
-  clip-path: polygon(4px 0%, 100% 0%, calc(100% - 4px) 100%, 0% 100%);
-}
-
-.input-forge::placeholder {
-  color: var(--steel);
-}
-.input-forge:focus {
-  border-color: var(--neon-gold);
-  box-shadow: 0 0 12px rgba(245, 166, 35, 0.2);
-}
-
-/* ===== СЕКЦИОННЫЕ РАЗДЕЛИТЕЛИ ===== */
+/* ===== РАЗДЕЛИТЕЛЬ ===== */
 .section-divider {
   height: 2px;
   background: linear-gradient(
     90deg,
     transparent,
-    var(--neon-gold),
+    var(--anime-pink),
+    var(--anime-purple),
+    var(--anime-blue),
     transparent
   );
-  margin: 0;
 }
 
-/* ===== ЗВЁЗДОЧКИ РЕЙТИНГА ===== */
+/* ===== ЗВЁЗДОЧКИ ===== */
 .stars {
-  color: var(--neon-gold);
+  color: var(--anime-yellow);
   letter-spacing: 2px;
 }
 
-/* ===== ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ ===== */
+/* ===== УГЛОВЫЕ ДЕКОРЫ ===== */
 .corner-decor {
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 }
 .corner-decor.tl {
   top: 0;
   left: 0;
-  border-top: 2px solid var(--neon-gold);
-  border-left: 2px solid var(--neon-gold);
+  border-top: 2px solid var(--anime-pink);
+  border-left: 2px solid var(--anime-pink);
 }
 .corner-decor.tr {
   top: 0;
   right: 0;
-  border-top: 2px solid var(--neon-gold);
-  border-right: 2px solid var(--neon-gold);
+  border-top: 2px solid var(--anime-pink);
+  border-right: 2px solid var(--anime-pink);
 }
 .corner-decor.bl {
   bottom: 0;
   left: 0;
-  border-bottom: 2px solid var(--neon-gold);
-  border-left: 2px solid var(--neon-gold);
+  border-bottom: 2px solid var(--anime-purple);
+  border-left: 2px solid var(--anime-purple);
 }
 .corner-decor.br {
   bottom: 0;
   right: 0;
-  border-bottom: 2px solid var(--neon-gold);
-  border-right: 2px solid var(--neon-gold);
+  border-bottom: 2px solid var(--anime-purple);
+  border-right: 2px solid var(--anime-purple);
 }
 
 /* ===== СКРОЛЛБАР ===== */
@@ -507,17 +535,17 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--dark-metal);
+  background: var(--dark-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(var(--neon-gold), var(--neon-red));
+  background: linear-gradient(var(--anime-pink), var(--anime-purple));
   border-radius: 3px;
 }
 
-/* ===== ЧИСЛА/СЧЁТЧИКИ ===== */
+/* ===== ЧИСЛА ===== */
 .stat-number {
   font-family: "Russo One", sans-serif;
-  background: linear-gradient(135deg, var(--neon-gold), #fff5d0);
+  background: linear-gradient(135deg, var(--anime-pink), var(--anime-yellow));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -526,62 +554,50 @@
 /* ===== ГАЛЕРЕЯ ===== */
 .gallery-thumb {
   cursor: pointer;
-  border: 2px solid rgba(200, 200, 208, 0.1);
+  border: 2px solid rgba(255, 60, 172, 0.15);
+  border-radius: 8px;
   transition: all 0.2s;
   overflow: hidden;
 }
 .gallery-thumb:hover {
-  border-color: var(--neon-gold);
+  border-color: var(--anime-pink);
 }
 .gallery-thumb.active {
-  border-color: var(--neon-gold);
-  box-shadow: 0 0 16px rgba(245, 166, 35, 0.5);
+  border-color: var(--anime-pink);
+  box-shadow:
+    0 0 20px rgba(255, 60, 172, 0.6),
+    0 0 40px rgba(192, 68, 255, 0.3);
 }
 
-/* ===== ФОНОВЫЕ ЧАСТИЦЫ ===== */
-.bg-particles {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
+/* ===== ФОРМА ===== */
+.input-forge {
+  background: rgba(15, 8, 22, 0.85);
+  border: 1px solid rgba(255, 60, 172, 0.25);
+  color: var(--text-bright);
+  font-family: "Rubik", sans-serif;
+  padding: 12px 16px;
+  width: 100%;
+  outline: none;
+  border-radius: 8px;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.input-forge::placeholder {
+  color: var(--text-dim);
+}
+.input-forge:focus {
+  border-color: var(--anime-pink);
+  box-shadow: 0 0 18px rgba(255, 60, 172, 0.3);
 }
 
-@keyframes particle-rise {
-  0% {
-    transform: translateY(100vh) rotate(0deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.6;
-  }
-  90% {
-    opacity: 0.3;
-  }
-  100% {
-    transform: translateY(-100px) rotate(720deg);
-    opacity: 0;
-  }
-}
-
-.particle {
-  position: absolute;
-  bottom: -10px;
-  width: 4px;
-  height: 4px;
-  background: var(--neon-gold);
-  border-radius: 50%;
-  animation: particle-rise linear infinite;
-}
-
-/* Навбар */
+/* ===== НАВБАР ===== */
 .nav-link {
-  font-family: "Oswald", sans-serif;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-family: "M PLUS Rounded 1c", "Rubik", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   font-size: 13px;
-  color: var(--chrome);
+  color: rgba(252, 232, 255, 0.7);
   transition: color 0.2s;
   position: relative;
   padding-bottom: 2px;
@@ -592,12 +608,13 @@
   bottom: 0;
   left: 0;
   width: 0;
-  height: 1px;
-  background: var(--neon-gold);
+  height: 2px;
+  background: linear-gradient(90deg, var(--anime-pink), var(--anime-purple));
   transition: width 0.2s;
+  border-radius: 1px;
 }
 .nav-link:hover {
-  color: var(--neon-gold);
+  color: var(--anime-pink);
 }
 .nav-link:hover::after {
   width: 100%;

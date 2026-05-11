@@ -107,20 +107,24 @@ export default function Index() {
   };
 
   return (
-    <div className="relative min-h-screen" style={{ background: "var(--dark-metal)" }}>
-      {/* Частицы фона */}
+    <div className="relative min-h-screen" style={{ background: "var(--dark-bg)" }}>
+      {/* Лепестки сакуры */}
       <div className="bg-particles">
-        {Array.from({ length: 12 }).map((_, i) => (
+        {Array.from({ length: 14 }).map((_, i) => (
           <div
             key={i}
             className="particle"
             style={{
-              left: `${8 + i * 8}%`,
-              width: i % 3 === 0 ? "6px" : "3px",
-              height: i % 3 === 0 ? "6px" : "3px",
-              animationDuration: `${8 + i * 1.5}s`,
-              animationDelay: `${i * 0.7}s`,
-              background: i % 2 === 0 ? "var(--neon-gold)" : "var(--neon-cyan)",
+              left: `${5 + i * 7}%`,
+              width: i % 3 === 0 ? "10px" : "7px",
+              height: i % 3 === 0 ? "10px" : "7px",
+              animationDuration: `${10 + i * 1.3}s`,
+              animationDelay: `${i * 0.9}s`,
+              background: [
+                "var(--anime-pink)", "var(--anime-purple)",
+                "var(--anime-blue)", "var(--anime-yellow)"
+              ][i % 4],
+              opacity: 0.7,
             }}
           />
         ))}
@@ -130,24 +134,23 @@ export default function Index() {
       <nav
         className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4"
         style={{
-          background: "rgba(13,14,20,0.92)",
-          backdropFilter: "blur(12px)",
-          borderBottom: "1px solid rgba(245,166,35,0.2)",
+          background: "rgba(15,8,22,0.92)",
+          backdropFilter: "blur(14px)",
+          borderBottom: "1px solid rgba(255,60,172,0.25)",
         }}
       >
         <div className="flex items-center gap-3">
           <div
-            className="w-8 h-8 flex items-center justify-center"
+            className="w-8 h-8 flex items-center justify-center rounded-full"
             style={{
-              background: "linear-gradient(135deg, var(--neon-gold), #d4860f)",
-              clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
+              background: "linear-gradient(135deg, var(--anime-pink), var(--anime-purple))", borderRadius: "50%",
             }}
           >
-            <Icon name="Sword" size={16} style={{ color: "#0d0e14" }} />
+            <Icon name="Sparkles" size={16} style={{ color: "#fff" }} />
           </div>
           <span
             className="font-bold tracking-widest text-sm"
-            style={{ fontFamily: "'Russo One', sans-serif", color: "var(--neon-gold)" }}
+            style={{ fontFamily: "'Russo One', sans-serif", color: "var(--anime-pink)", textShadow: "0 0 10px rgba(255,60,172,0.6)" }}
           >
             CAT CRAFTEDS STORE
           </span>
@@ -170,9 +173,10 @@ export default function Index() {
         className="relative min-h-screen flex items-center justify-center overflow-hidden scanlines pt-20"
         style={{
           background: `
-            radial-gradient(ellipse 80% 60% at 50% 120%, rgba(245,166,35,0.12) 0%, transparent 60%),
-            radial-gradient(ellipse 60% 40% at 80% 20%, rgba(0,245,255,0.06) 0%, transparent 50%),
-            var(--dark-metal)
+            radial-gradient(ellipse 100% 70% at 50% -10%, rgba(192,68,255,0.3) 0%, transparent 55%),
+            radial-gradient(ellipse 70% 50% at 100% 40%, rgba(255,60,172,0.18) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 50% at 0% 80%, rgba(0,212,255,0.12) 0%, transparent 50%),
+            var(--dark-bg)
           `,
         }}
       >
@@ -181,23 +185,23 @@ export default function Index() {
           className="absolute inset-0 opacity-5"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(245,166,35,0.5) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(245,166,35,0.5) 1px, transparent 1px)
+              linear-gradient(rgba(255,60,172,0.6) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,60,172,0.6) 1px, transparent 1px)
             `,
-            backgroundSize: "60px 60px",
+            backgroundSize: "50px 50px",
           }}
         />
 
         {/* Вращающийся декор */}
         <div
           className="absolute right-8 top-1/4 w-48 h-48 opacity-10 animate-rotate-slow hidden lg:block"
-          style={{ border: "1px solid var(--neon-gold)", borderRadius: "50%" }}
+          style={{ border: "1px solid var(--anime-yellow)", borderRadius: "50%" }}
         />
         <div
           className="absolute right-16 mt-8 w-32 h-32 opacity-10 hidden lg:block"
           style={{
             top: "30%",
-            border: "1px solid var(--neon-cyan)",
+            border: "1px solid var(--anime-blue)",
             animation: "rotate-slow 15s linear infinite reverse",
           }}
         />
@@ -209,7 +213,7 @@ export default function Index() {
             data-text="CAT CRAFTEDS STORE"
             style={{
               fontFamily: "'Russo One', sans-serif",
-              background: "linear-gradient(135deg, #fff5d0 0%, var(--neon-gold) 40%, #c8c8d0 70%, var(--neon-gold) 100%)",
+              background: "linear-gradient(135deg, #ff3cac 0%, #c044ff 35%, #00d4ff 65%, #ffe94d 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -222,18 +226,21 @@ export default function Index() {
           <div
             className="text-2xl md:text-3xl mb-6 animate-slide-up delay-300 animate-flicker"
             style={{
-              fontFamily: "'Oswald', sans-serif",
-              color: "var(--neon-cyan)",
-              letterSpacing: "0.3em",
+              fontFamily: "'M PLUS Rounded 1c', 'Oswald', sans-serif",
+              background: "linear-gradient(90deg, var(--anime-pink), var(--anime-blue))",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              letterSpacing: "0.25em",
               textTransform: "uppercase",
             }}
           >
-            Картины на металле
+            ✦ Картины на металле ✦
           </div>
 
           <p
             className="text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed animate-slide-up delay-400"
-            style={{ color: "var(--chrome)", fontFamily: "'Rubik', sans-serif" }}
+            style={{ color: "var(--text-bright)", fontFamily: "'Rubik', sans-serif", opacity: 0.85 }}
           >
             Эксклюзивные картины на металле, HD качества, портреты, фото, постеры.
           </p>
@@ -268,7 +275,7 @@ export default function Index() {
                 <div className="stat-number text-3xl md:text-4xl mb-1">{s.num}</div>
                 <div
                   style={{
-                    color: "var(--steel)",
+                    color: "var(--text-dim)",
                     fontSize: "12px",
                     letterSpacing: "0.1em",
                     fontFamily: "'Oswald', sans-serif",
@@ -283,7 +290,7 @@ export default function Index() {
 
         {/* Нижняя стрелка */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
-          <Icon name="ChevronDown" size={28} style={{ color: "var(--neon-gold)", opacity: 0.6 }} />
+          <Icon name="ChevronDown" size={28} style={{ color: "var(--anime-yellow)", opacity: 0.6 }} />
         </div>
       </section>
 
@@ -295,8 +302,9 @@ export default function Index() {
         className="relative py-24 px-6"
         style={{
           background: `
-            radial-gradient(ellipse 70% 50% at 10% 50%, rgba(0,245,255,0.05) 0%, transparent 60%),
-            var(--dark-metal)
+            radial-gradient(ellipse 70% 50% at 10% 50%, rgba(0,212,255,0.08) 0%, transparent 60%),
+            radial-gradient(ellipse 50% 40% at 90% 80%, rgba(192,68,255,0.08) 0%, transparent 50%),
+            var(--dark-bg)
           `,
         }}
       >
@@ -311,7 +319,7 @@ export default function Index() {
             >
               METAL <span className="neon-text-gold">PRINT</span>
             </h2>
-            <p style={{ color: "var(--steel)", maxWidth: "500px", margin: "0 auto" }}>
+            <p style={{ color: "var(--text-dim)", maxWidth: "500px", margin: "0 auto" }}>
               Картина на металле — ваше фото, портрет или постер в HD качестве на алюминиевой панели.
             </p>
           </div>
@@ -322,14 +330,14 @@ export default function Index() {
               <div
                 className="p-6 mb-6 relative"
                 style={{
-                  background: "rgba(26,28,38,0.6)",
-                  border: "1px solid rgba(245,166,35,0.15)",
-                  clipPath: "polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px))",
+                  background: "rgba(32,21,64,0.7)",
+                  border: "1px solid rgba(255,60,172,0.25)",
+                  borderRadius: "8px",
                 }}
               >
                 <div className="corner-decor tl" />
                 <div className="corner-decor br" />
-                <p style={{ color: "var(--chrome)", lineHeight: "1.8" }}>
+                <p style={{ color: "var(--text-bright)", lineHeight: "1.8" }}>
                   Печатаем на алюминиевых панелях с лаковым покрытием — изображение буквально светится
                   изнутри. Подходит для портретов, семейных фото, аниме-постеров и любых изображений.
                   Не выгорает, не боится влаги, готово к вешанию сразу из коробки.
@@ -343,13 +351,13 @@ export default function Index() {
                     key={i}
                     className="p-3 flex flex-col gap-1"
                     style={{
-                      background: "rgba(26,28,38,0.5)",
-                      border: "1px solid rgba(200,200,208,0.08)",
+                      background: "rgba(32,21,64,0.5)",
+                      border: "1px solid rgba(255,60,172,0.15)",
                     }}
                   >
                     <span
                       style={{
-                        color: "var(--steel)",
+                        color: "var(--text-dim)",
                         fontSize: "11px",
                         letterSpacing: "0.1em",
                         fontFamily: "'Oswald', sans-serif",
@@ -357,7 +365,7 @@ export default function Index() {
                     >
                       {s.label}
                     </span>
-                    <span style={{ color: "var(--neon-gold)", fontFamily: "'Oswald', sans-serif", fontWeight: 600 }}>
+                    <span style={{ color: "var(--anime-yellow)", fontFamily: "'Oswald', sans-serif", fontWeight: 600 }}>
                       {s.value}
                     </span>
                   </div>
@@ -366,10 +374,10 @@ export default function Index() {
 
               <div className="mt-8 flex items-end gap-4">
                 <div>
-                  <div style={{ color: "var(--steel)", fontSize: "12px", marginBottom: "4px" }}>Цена</div>
+                  <div style={{ color: "var(--text-dim)", fontSize: "12px", marginBottom: "4px" }}>Цена</div>
                   <div
                     className="text-4xl font-black"
-                    style={{ fontFamily: "'Russo One', sans-serif", color: "var(--neon-gold)" }}
+                    style={{ fontFamily: "'Russo One', sans-serif", color: "var(--anime-yellow)" }}
                   >
                     2 000 ₽
                   </div>
@@ -406,7 +414,7 @@ export default function Index() {
                     >
                       {adv.title}
                     </div>
-                    <div style={{ color: "var(--steel)", fontSize: "14px", lineHeight: "1.5" }}>{adv.desc}</div>
+                    <div style={{ color: "var(--text-dim)", fontSize: "14px", lineHeight: "1.5" }}>{adv.desc}</div>
                   </div>
                 </div>
               ))}
@@ -418,7 +426,7 @@ export default function Index() {
       <div className="section-divider" />
 
       {/* ===== ГАЛЕРЕЯ ===== */}
-      <section id="gallery" className="relative py-24 px-6" style={{ background: "var(--dark-metal)" }}>
+      <section id="gallery" className="relative py-24 px-6" style={{ background: "var(--dark-bg)" }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <div className="neon-text-gold text-xs tracking-widest mb-3" style={{ fontFamily: "'Oswald', sans-serif" }}>
@@ -435,7 +443,7 @@ export default function Index() {
             style={{
               aspectRatio: "16/9",
               background: "#0a0b10",
-              border: "1px solid rgba(245,166,35,0.2)",
+              border: "1px solid rgba(255,60,172,0.25)",
               boxShadow: "0 0 40px rgba(0,0,0,0.8)",
             }}
           >
@@ -467,14 +475,14 @@ export default function Index() {
               <span
                 style={{
                   fontFamily: "'Oswald', sans-serif",
-                  color: "var(--neon-gold)",
+                  color: "var(--anime-yellow)",
                   letterSpacing: "0.1em",
                   fontSize: "14px",
                 }}
               >
                 {GALLERY_ITEMS[activeGallery].label}
               </span>
-              <div className="flex items-center gap-2" style={{ color: "var(--steel)", fontSize: "12px" }}>
+              <div className="flex items-center gap-2" style={{ color: "var(--text-dim)", fontSize: "12px" }}>
                 <Icon name={GALLERY_ITEMS[activeGallery].type === "video" ? "Play" : "Image"} size={14} />
                 {activeGallery + 1} / {GALLERY_ITEMS.length}
               </div>
@@ -494,7 +502,7 @@ export default function Index() {
                   <img src={item.src} alt={item.label} className="w-full h-full object-cover" />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center" style={{ background: "#1a1c26" }}>
-                    <Icon name="Play" size={28} style={{ color: "var(--neon-gold)" }} />
+                    <Icon name="Play" size={28} style={{ color: "var(--anime-yellow)" }} />
                   </div>
                 )}
                 <div
@@ -503,7 +511,7 @@ export default function Index() {
                     background: "rgba(13,14,20,0.85)",
                     fontSize: "10px",
                     fontFamily: "'Oswald', sans-serif",
-                    color: activeGallery === i ? "var(--neon-gold)" : "var(--steel)",
+                    color: activeGallery === i ? "var(--anime-yellow)" : "var(--text-dim)",
                     letterSpacing: "0.05em",
                   }}
                 >
@@ -523,7 +531,7 @@ export default function Index() {
         style={{
           background: `
             radial-gradient(ellipse 80% 60% at 90% 50%, rgba(180,79,255,0.05) 0%, transparent 60%),
-            var(--dark-metal)
+            var(--dark-bg)
           `,
         }}
       >
@@ -560,7 +568,7 @@ export default function Index() {
                 >
                   {adv.title}
                 </h3>
-                <p style={{ color: "var(--steel)", fontSize: "14px", lineHeight: "1.6" }}>{adv.desc}</p>
+                <p style={{ color: "var(--text-dim)", fontSize: "14px", lineHeight: "1.6" }}>{adv.desc}</p>
               </div>
             ))}
           </div>
@@ -570,7 +578,7 @@ export default function Index() {
       <div className="section-divider" />
 
       {/* ===== ОТЗЫВЫ ===== */}
-      <section className="relative py-24 px-6" style={{ background: "var(--dark-metal)" }}>
+      <section className="relative py-24 px-6" style={{ background: "var(--dark-bg)" }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <div className="neon-text-cyan text-xs tracking-widest mb-3" style={{ fontFamily: "'Oswald', sans-serif" }}>
@@ -592,19 +600,19 @@ export default function Index() {
                 <div className="stars mb-3">{"★".repeat(rev.rating)}</div>
                 <p
                   className="mb-6"
-                  style={{ color: "var(--chrome)", fontSize: "14px", lineHeight: "1.7", fontStyle: "italic" }}
+                  style={{ color: "var(--text-bright)", fontSize: "14px", lineHeight: "1.7", fontStyle: "italic" }}
                 >
                   «{rev.text}»
                 </p>
                 <div>
-                  <div style={{ fontFamily: "'Oswald', sans-serif", color: "var(--neon-gold)", fontWeight: 600 }}>
+                  <div style={{ fontFamily: "'Oswald', sans-serif", color: "var(--anime-yellow)", fontWeight: 600 }}>
                     {rev.name}
                   </div>
-                  <div style={{ color: "var(--steel)", fontSize: "12px" }}>{rev.role}</div>
+                  <div style={{ color: "var(--text-dim)", fontSize: "12px" }}>{rev.role}</div>
                 </div>
                 <div
                   className="absolute bottom-0 left-6 right-6 h-px"
-                  style={{ background: "linear-gradient(90deg, transparent, var(--neon-cyan), transparent)" }}
+                  style={{ background: "linear-gradient(90deg, transparent, var(--anime-blue), transparent)" }}
                 />
               </div>
             ))}
@@ -613,23 +621,23 @@ export default function Index() {
           {/* Общий рейтинг */}
           <div
             className="mt-10 p-6 flex flex-col md:flex-row items-center justify-center gap-8 text-center"
-            style={{ background: "rgba(245,166,35,0.05)", border: "1px solid rgba(245,166,35,0.2)" }}
+            style={{ background: "rgba(192,68,255,0.07)", border: "1px solid rgba(255,60,172,0.25)" }}
           >
             <div>
               <div className="stat-number text-5xl mb-1">4.9</div>
               <div className="stars text-xl">★★★★★</div>
             </div>
-            <div style={{ width: "1px", height: "60px", background: "rgba(245,166,35,0.3)" }} className="hidden md:block" />
+            <div style={{ width: "1px", height: "60px", background: "rgba(255,60,172,0.4)" }} className="hidden md:block" />
             <div>
               <div className="stat-number text-3xl mb-1">1200+</div>
-              <div style={{ color: "var(--steel)", fontFamily: "'Oswald', sans-serif", fontSize: "13px", letterSpacing: "0.1em" }}>
+              <div style={{ color: "var(--text-dim)", fontFamily: "'Oswald', sans-serif", fontSize: "13px", letterSpacing: "0.1em" }}>
                 ДОВОЛЬНЫХ КЛИЕНТОВ
               </div>
             </div>
-            <div style={{ width: "1px", height: "60px", background: "rgba(245,166,35,0.3)" }} className="hidden md:block" />
+            <div style={{ width: "1px", height: "60px", background: "rgba(255,60,172,0.4)" }} className="hidden md:block" />
             <div>
               <div className="stat-number text-3xl mb-1">98%</div>
-              <div style={{ color: "var(--steel)", fontFamily: "'Oswald', sans-serif", fontSize: "13px", letterSpacing: "0.1em" }}>
+              <div style={{ color: "var(--text-dim)", fontFamily: "'Oswald', sans-serif", fontSize: "13px", letterSpacing: "0.1em" }}>
                 ПОВТОРНЫХ ЗАКАЗОВ
               </div>
             </div>
@@ -645,8 +653,8 @@ export default function Index() {
         className="relative py-24 px-6"
         style={{
           background: `
-            radial-gradient(ellipse 70% 60% at 50% 50%, rgba(245,166,35,0.07) 0%, transparent 70%),
-            var(--dark-metal)
+            radial-gradient(ellipse 70% 60% at 50% 50%, rgba(192,68,255,0.08) 0%, transparent 70%),
+            var(--dark-bg)
           `,
         }}
       >
@@ -658,7 +666,7 @@ export default function Index() {
             <h2 className="text-5xl font-black" style={{ fontFamily: "'Russo One', sans-serif", color: "#e8e0d0" }}>
               ЗАКОВАТЬ <span className="neon-text-gold">ЛЕГЕНДУ</span>
             </h2>
-            <p className="mt-4" style={{ color: "var(--steel)" }}>
+            <p className="mt-4" style={{ color: "var(--text-dim)" }}>
               Оставьте заявку — мастер свяжется с вами в течение 2 часов
             </p>
           </div>
@@ -667,9 +675,9 @@ export default function Index() {
             <div
               className="p-12 text-center relative"
               style={{
-                background: "rgba(26,28,38,0.8)",
-                border: "1px solid rgba(245,166,35,0.3)",
-                boxShadow: "0 0 40px rgba(245,166,35,0.1)",
+                background: "rgba(32,21,64,0.85)",
+                border: "1px solid rgba(255,60,172,0.4)",
+                boxShadow: "0 0 40px rgba(255,60,172,0.15)",
               }}
             >
               <div className="corner-decor tl" />
@@ -683,7 +691,7 @@ export default function Index() {
               >
                 ЗАЯВКА ПРИНЯТА!
               </h3>
-              <p style={{ color: "var(--chrome)" }}>
+              <p style={{ color: "var(--text-bright)" }}>
                 Мастер свяжется с вами в течение 2 часов. Легенда начинает ковку!
               </p>
             </div>
@@ -692,8 +700,8 @@ export default function Index() {
               onSubmit={handleSubmit}
               className="relative p-8"
               style={{
-                background: "rgba(26,28,38,0.8)",
-                border: "1px solid rgba(245,166,35,0.2)",
+                background: "rgba(32,21,64,0.85)",
+                border: "1px solid rgba(255,60,172,0.25)",
                 boxShadow: "0 0 40px rgba(0,0,0,0.5)",
               }}
             >
@@ -706,7 +714,7 @@ export default function Index() {
                 <div>
                   <label
                     className="block mb-2 text-xs tracking-widest"
-                    style={{ fontFamily: "'Oswald', sans-serif", color: "var(--neon-gold)" }}
+                    style={{ fontFamily: "'Oswald', sans-serif", color: "var(--anime-yellow)" }}
                   >
                     ИМЯ ВОИНА *
                   </label>
@@ -723,7 +731,7 @@ export default function Index() {
                   <div>
                     <label
                       className="block mb-2 text-xs tracking-widest"
-                      style={{ fontFamily: "'Oswald', sans-serif", color: "var(--neon-gold)" }}
+                      style={{ fontFamily: "'Oswald', sans-serif", color: "var(--anime-yellow)" }}
                     >
                       ТЕЛЕФОН *
                     </label>
@@ -738,7 +746,7 @@ export default function Index() {
                   <div>
                     <label
                       className="block mb-2 text-xs tracking-widest"
-                      style={{ fontFamily: "'Oswald', sans-serif", color: "var(--neon-gold)" }}
+                      style={{ fontFamily: "'Oswald', sans-serif", color: "var(--anime-yellow)" }}
                     >
                       E-MAIL
                     </label>
@@ -755,7 +763,7 @@ export default function Index() {
                 <div>
                   <label
                     className="block mb-2 text-xs tracking-widest"
-                    style={{ fontFamily: "'Oswald', sans-serif", color: "var(--neon-gold)" }}
+                    style={{ fontFamily: "'Oswald', sans-serif", color: "var(--anime-yellow)" }}
                   >
                     ПОЖЕЛАНИЯ К ЗАКАЗУ
                   </label>
@@ -776,7 +784,7 @@ export default function Index() {
                   </span>
                 </button>
 
-                <p className="text-center text-xs" style={{ color: "var(--steel)" }}>
+                <p className="text-center text-xs" style={{ color: "var(--text-dim)" }}>
                   Отправляя форму, вы соглашаетесь с политикой конфиденциальности
                 </p>
               </div>
@@ -788,7 +796,7 @@ export default function Index() {
       <div className="section-divider" />
 
       {/* ===== КОНТАКТЫ ===== */}
-      <section id="contacts" className="relative py-24 px-6" style={{ background: "var(--dark-metal)" }}>
+      <section id="contacts" className="relative py-24 px-6" style={{ background: "var(--dark-bg)" }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <div className="neon-text-cyan text-xs tracking-widest mb-3" style={{ fontFamily: "'Oswald', sans-serif" }}>
@@ -839,14 +847,14 @@ export default function Index() {
                   <Icon name={c.icon} size={24} style={{ color: c.color }} />
                 </div>
                 <div
-                  style={{ fontFamily: "'Oswald', sans-serif", color: "var(--steel)", fontSize: "12px", letterSpacing: "0.1em" }}
+                  style={{ fontFamily: "'Oswald', sans-serif", color: "var(--text-dim)", fontSize: "12px", letterSpacing: "0.1em" }}
                 >
                   {c.label}
                 </div>
                 <div style={{ fontFamily: "'Oswald', sans-serif", color: "#e8e0d0", fontWeight: 600 }}>
                   {c.value}
                 </div>
-                <div style={{ color: "var(--steel)", fontSize: "12px" }}>{c.sub}</div>
+                <div style={{ color: "var(--text-dim)", fontSize: "12px" }}>{c.sub}</div>
               </a>
             ))}
           </div>
@@ -875,27 +883,26 @@ export default function Index() {
       <footer
         className="py-8 px-6 text-center"
         style={{
-          background: "rgba(10,11,16,0.95)",
-          borderTop: "1px solid rgba(245,166,35,0.15)",
+          background: "rgba(10,5,18,0.97)",
+          borderTop: "1px solid rgba(255,60,172,0.2)",
         }}
       >
         <div className="flex items-center justify-center gap-3 mb-3">
           <div
-            className="w-6 h-6 flex items-center justify-center"
+            className="w-6 h-6 flex items-center justify-center rounded-full"
             style={{
-              background: "linear-gradient(135deg, var(--neon-gold), #d4860f)",
-              clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
+              background: "linear-gradient(135deg, var(--anime-pink), var(--anime-purple))",
             }}
           >
-            <Icon name="Sword" size={12} style={{ color: "#0d0e14" }} />
+            <Icon name="Sparkles" size={12} style={{ color: "#fff" }} />
           </div>
           <span
-            style={{ fontFamily: "'Russo One', sans-serif", color: "var(--neon-gold)", fontSize: "14px", letterSpacing: "0.15em" }}
+            style={{ fontFamily: "'Russo One', sans-serif", color: "var(--anime-pink)", textShadow: "0 0 10px rgba(255,60,172,0.6)", fontSize: "14px", letterSpacing: "0.1em" }}
           >
             CAT CRAFTEDS STORE
           </span>
         </div>
-        <p style={{ color: "var(--steel)", fontSize: "12px" }}>
+        <p style={{ color: "var(--text-dim)", fontSize: "12px" }}>
           © 2024 Steel Forge. Кузница легенд. Все права защищены.
         </p>
       </footer>
