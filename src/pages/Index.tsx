@@ -27,7 +27,7 @@ const GALLERY_ITEMS = [
 const SPECS = [
   { label: "Материал", value: "Алюминий + лак" },
   { label: "Разрешение", value: "До 4K / HD" },
-  { label: "Толщина", value: "2 мм" },
+  { label: "Размер", value: "30×40 см" },
   { label: "Покрытие", value: "Глянец / матовый" },
   { label: "Печать", value: "Струйная" },
   { label: "Гарантия", value: "10 лет" },
