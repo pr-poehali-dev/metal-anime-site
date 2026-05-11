@@ -820,10 +820,10 @@ export default function Index() {
               {
                 icon: "Phone",
                 label: "Телефон",
-                value: "+7 (999) 123-45-67",
+                value: "+7 (961) 320-65-29",
                 sub: "Пн–Сб, 10:00–20:00",
                 color: "#f5a623",
-                href: "tel:+79991234567",
+                href: "tel:+79613206529",
               },
               {
                 icon: "Mail",
