@@ -4,18 +4,18 @@ import Icon from "@/components/ui/icon";
 const GALLERY_ITEMS = [
   {
     type: "image",
-    src: "https://cdn.poehali.dev/projects/64fc7359-be7e-409e-806c-f36651a59ca8/files/7d231756-9116-4ae0-82b6-8ae052d98646.jpg",
-    label: "Вид спереди",
+    src: "https://cdn.poehali.dev/projects/64fc7359-be7e-409e-806c-f36651a59ca8/files/64b026c1-1af1-4898-a591-6676294f8261.jpg",
+    label: "Аниме-портрет на металле",
   },
   {
     type: "image",
-    src: "https://cdn.poehali.dev/projects/64fc7359-be7e-409e-806c-f36651a59ca8/files/c100cf6d-cdd5-4682-b8f4-7f2773034855.jpg",
-    label: "Детали гравировки",
+    src: "https://cdn.poehali.dev/projects/64fc7359-be7e-409e-806c-f36651a59ca8/files/82751c2d-72cc-4e6b-9b59-b2e874a1b4fc.jpg",
+    label: "Семейный портрет",
   },
   {
     type: "image",
-    src: "https://cdn.poehali.dev/projects/64fc7359-be7e-409e-806c-f36651a59ca8/files/5da3abbe-b67e-44a7-ac49-32d3e2a0d3f4.jpg",
-    label: "Производство",
+    src: "https://cdn.poehali.dev/projects/64fc7359-be7e-409e-806c-f36651a59ca8/files/8028213c-d6aa-4d3e-bf7b-f72c0c5d41ab.jpg",
+    label: "Галерея постеров",
   },
   {
     type: "video",
