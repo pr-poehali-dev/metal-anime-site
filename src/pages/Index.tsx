@@ -84,7 +84,7 @@ const REVIEWS = [
     name: "Михаил Д.",
     role: "Аниме-энтузиаст",
     rating: 5,
-    text: "Давно искал что-то в стиле японского аниме, но с реальным качеством металла. STEEL FORGE — именно это. Упаковка тоже шикарная!",
+    text: "Давно искал что-то в стиле японского аниме, но с реальным качеством металла. CAT CRAFTEDS STORE — именно это. Упаковка тоже шикарная!",
     avatar: "🎌",
   },
   {
@@ -149,7 +149,7 @@ export default function Index() {
             className="font-bold tracking-widest text-sm"
             style={{ fontFamily: "'Russo One', sans-serif", color: "var(--neon-gold)" }}
           >
-            STEEL FORGE
+            CAT CRAFTEDS STORE
           </span>
         </div>
         <div className="hidden md:flex items-center gap-8">
@@ -222,7 +222,7 @@ export default function Index() {
           {/* Главный заголовок */}
           <h1
             className="glitch-container text-7xl md:text-9xl font-black mb-4 leading-none animate-slide-up delay-200"
-            data-text="STEEL FORGE"
+            data-text="CAT CRAFTEDS STORE"
             style={{
               fontFamily: "'Russo One', sans-serif",
               background: "linear-gradient(135deg, #fff5d0 0%, var(--neon-gold) 40%, #c8c8d0 70%, var(--neon-gold) 100%)",
@@ -232,7 +232,7 @@ export default function Index() {
               letterSpacing: "-0.02em",
             }}
           >
-            STEEL FORGE
+            CAT CRAFTEDS STORE
           </h1>
 
           <div
@@ -909,7 +909,7 @@ export default function Index() {
           <span
             style={{ fontFamily: "'Russo One', sans-serif", color: "var(--neon-gold)", fontSize: "14px", letterSpacing: "0.15em" }}
           >
-            STEEL FORGE
+            CAT CRAFTEDS STORE
           </span>
         </div>
         <p style={{ color: "var(--steel)", fontSize: "12px" }}>
