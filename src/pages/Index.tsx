@@ -203,22 +203,6 @@ export default function Index() {
         />
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 text-center">
-          {/* Бейдж */}
-          <div
-            className="inline-flex items-center gap-2 mb-8 px-4 py-2 text-xs animate-slide-up"
-            style={{
-              background: "rgba(245,166,35,0.08)",
-              border: "1px solid rgba(245,166,35,0.3)",
-              color: "var(--neon-gold)",
-              fontFamily: "'Oswald', sans-serif",
-              letterSpacing: "0.15em",
-              clipPath: "polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%)",
-            }}
-          >
-            <Icon name="Zap" size={12} />
-            АНИМЕ-ПАНК КУЗНИЦА — ОСНОВАНА В 2018
-          </div>
-
           {/* Главный заголовок */}
           <h1
             className="glitch-container text-7xl md:text-9xl font-black mb-4 leading-none animate-slide-up delay-200"
