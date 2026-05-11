@@ -29,7 +29,7 @@ const SPECS = [
   { label: "Разрешение", value: "До 4K / HD" },
   { label: "Толщина", value: "2 мм" },
   { label: "Покрытие", value: "Глянец / матовый" },
-  { label: "Печать", value: "УФ-принтер" },
+  { label: "Печать", value: "Струйная" },
   { label: "Гарантия", value: "10 лет" },
 ];
 
